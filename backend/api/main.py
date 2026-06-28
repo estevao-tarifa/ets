@@ -24,7 +24,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="ETS API", version="0.1.0", lifespan=lifespan)
 
 # Register all routers
-from backend.api.routes import config, materials, graph, study, flashcards, exercises, exams, health
+from backend.api.routes import config, materials, graph, study, flashcards, exercises, exams, health, materias
 app.include_router(config.router, prefix="/api")
 app.include_router(materials.router, prefix="/api")
 app.include_router(graph.router, prefix="/api")
@@ -33,6 +33,7 @@ app.include_router(flashcards.router, prefix="/api")
 app.include_router(exercises.router, prefix="/api")
 app.include_router(exams.router, prefix="/api")
 app.include_router(health.router, prefix="/api")
+app.include_router(materias.router, prefix="/api")
 
 # Serve frontend SPA (must be last)
 _frontend_dist = Path(__file__).parent.parent.parent / "frontend" / "dist"
