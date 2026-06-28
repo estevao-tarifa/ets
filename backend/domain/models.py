@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from domain.enums import EvidenceType, JobStatus, NodeLevel
+from backend.domain.enums import EvidenceType, JobStatus, NodeLevel
 
 
 @dataclass(frozen=True)

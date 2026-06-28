@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from domain.enums import NodeColor
+from backend.domain.enums import NodeColor
 
 
 def calculate_node_color(dominio: float | None, tem_dependentes: bool) -> NodeColor:

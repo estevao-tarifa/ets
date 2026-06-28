@@ -2,6 +2,8 @@ import asyncio
 import os
 from logging.config import fileConfig
 
+import sqlite_vec
+from sqlalchemy import event
 from sqlalchemy.ext.asyncio import create_async_engine
 from sqlalchemy import pool
 
@@ -36,6 +38,13 @@ def do_run_migrations(connection):
 
 async def run_migrations_online() -> None:
     engine = create_async_engine(DATABASE_URL, poolclass=pool.NullPool)
+
+    @event.listens_for(engine.sync_engine, "connect")
+    def _load_vec(conn, _):
+        conn.enable_load_extension(True)
+        conn.load_extension(sqlite_vec.loadable_path())
+        conn.enable_load_extension(False)
+
     async with engine.connect() as connection:
         await connection.run_sync(do_run_migrations)
     await engine.dispose()
