@@ -1,0 +1,43 @@
+# Aliases de Cálculo
+integral definida:
+  - integral de riemann
+  - área sob a curva
+  - integral (definida)
+integral indefinida:
+  - antiderivada
+  - primitiva
+  - integral sem limites
+derivada:
+  - derivação
+  - taxa de variação
+  - diferencial
+limite:
+  - limite de função
+  - noção de limite
+série de taylor:
+  - expansão de taylor
+  - série de maclaurin
+# Aliases de Álgebra Linear
+matriz:
+  - array bidimensional
+  - tabela matricial
+vetor:
+  - vetor coluna
+  - vetor linha
+  - array unidimensional
+autovalor:
+  - eigenvalue
+  - valor próprio
+autovetore:
+  - eigenvector
+  - vetor próprio
+# Aliases de Física
+força:
+  - forca resultante
+  - força líquida
+velocidade:
+  - velocidade instantânea
+  - taxa de deslocamento
+aceleração:
+  - variação de velocidade
+  - aceleração instantânea
