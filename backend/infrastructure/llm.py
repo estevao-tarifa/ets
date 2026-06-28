@@ -14,8 +14,9 @@ async def call_llm(
     json_mode: bool = False,
 ) -> str:
     logger.info(f"LLM call: provider={provider} model={model}")
+    full_model = model if "/" in model else f"{provider}/{model}"
     kwargs: dict = {
-        "model": model,
+        "model": full_model,
         "messages": [{"role": "user", "content": prompt}],
         "max_tokens": max_tokens,
         "api_key": api_key,

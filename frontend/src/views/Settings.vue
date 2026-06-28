@@ -65,7 +65,8 @@ async function testConn() {
   }
 }
 
-function save() {
+async function save() {
+  await api.saveConfig(form.value)
   localStorage.setItem("llm_provider", form.value.provider)
   localStorage.setItem("llm_model", form.value.model)
   localStorage.setItem("llm_configured", "true")

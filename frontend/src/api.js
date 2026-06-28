@@ -15,6 +15,7 @@ export const api = {
   // Config
   getConfig: () => req("GET", "/config"),
   testConfig: (body) => req("POST", "/config/test", body),
+  saveConfig: (body) => fetch(`${BASE}/config`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }).then(r => { if (!r.ok) throw new Error("Falha ao salvar config") }),
 
   // Health
   health: () => req("GET", "/health"),
